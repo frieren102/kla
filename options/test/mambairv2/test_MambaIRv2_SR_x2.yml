@@ -1,0 +1,58 @@
+# general settings
+name: test_MambaIRv2_SRBase_x2
+model_type: MambaIRv2Model
+scale: 2
+num_gpu: 1
+manual_seed: 10
+
+datasets:
+  test_1:
+    name: LocalTest
+    type: PairedImageDataset
+    dataroot_gt: ./datasets/test/HR
+    dataroot_lq: ./datasets/test/LR
+    filename_tmpl: '{}'
+    io_backend:
+      type: disk
+
+
+
+network_g:
+  type: MambaIRv2
+  upscale: 2
+  in_chans: 3
+  img_size: 64
+  img_range: 1.
+  embed_dim: 174
+  d_state: 16
+  depths: [6, 6, 6,6,6,6]
+  num_heads: [6,6,6,6,6,6]
+  window_size: 16
+  inner_rank: 64
+  num_tokens: 128
+  convffn_kernel_size: 5
+  mlp_ratio: 2.
+  upsampler: 'pixelshuffle'
+  resi_connection: '1conv'
+
+
+
+# path
+path:
+  pretrain_network_g: ./experiments/pretrained_models/mambairv2_classicSR_Base_x2.pth
+  strict_load_g: true
+
+# validation settings
+val:
+  save_img: false
+  suffix: ~  # add suffix to saved images, if None, use exp name
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 2
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 2
+      test_y_channel: true

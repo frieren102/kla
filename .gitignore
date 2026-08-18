@@ -1,0 +1,111 @@
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+*.png
+*.jpeg
+*.jpg
+*.npy
+
+# Virtual environments
+venv/
+.venv/
+env/
+envs/
+venv*/
+ENV/
+
+# ==============================
+# Jupyter
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# IDE / Editor
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ==============================
+# Datasets
+# ==============================
+dataset/
+datasets/
+data/
+
+# Keep dataset directory structure if desired
+# !datasets/.gitkeep
+
+# ==============================
+# Training / Experiment Outputs
+# ==============================
+experiments/
+results/
+tb_logger/
+runs/
+logs/
+
+# TensorBoard
+*.tfevents.*
+
+# ==============================
+# Model Checkpoints / Weights
+# ==============================
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+weights/
+checkpoints/
+
+# ==============================
+# Generated Images
+# ==============================
+outputs/
+output/
+visualizations/
+predictions/
+
+# ==============================
+# Temporary / Cache
+# ==============================
+*.tmp
+*.temp
+*.cache
+.cache/
+tmp/
+temp/
+
+# ==============================
+# OS
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Environment / Secrets
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Python packaging
+# ==============================
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
+# ==============================
+# Logs
+# ==============================
+*.log
